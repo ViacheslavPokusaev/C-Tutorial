@@ -1,0 +1,8 @@
+﻿  InputOutput.cpp
+  Matrix.cpp
+  WorkWithMatrix.cpp
+F:\ЛР1\WorkWithMatrix.cpp(61,38): warning C4244: =: преобразование "float" в "int", возможна потеря данных
+  main.cpp
+F:\ЛР1\main.cpp(17,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
+  LR1.vcxproj -> F:\ЛР1\Debug\LR1.exe
