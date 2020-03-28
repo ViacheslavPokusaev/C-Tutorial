@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\User\Documents\C++Tutorial\ОП\Part_second\Project1\Project1\main.cpp(36,11): warning C4129: ): неизвестная escape-последовательность
+C:\Users\User\Documents\C++Tutorial\ОП\Part_second\Project1\Project1\main.cpp(52,30): warning C4244: =: преобразование "std::streamoff" в "int", возможна потеря данных
+C:\Users\User\Documents\C++Tutorial\ОП\Part_second\Project1\Project1\main.cpp(74,24): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\User\Documents\C++Tutorial\ОП\Part_second\Project1\Project1\main.cpp(76,27): warning C4018: <: несоответствие типов со знаком и без знака
+  Project1.vcxproj -> C:\Users\User\Documents\C++Tutorial\ОП\Part_second\Project1\Debug\Project1.exe
