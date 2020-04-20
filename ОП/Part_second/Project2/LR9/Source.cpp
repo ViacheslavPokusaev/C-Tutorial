@@ -1,35 +1,105 @@
 #include<iostream>
 #include<fstream>
 #include "Float.h"
+#include "JobWithFile.h"
 
 using namespace std;
 
 int main()
 {
-	Real_estate_float floats[3] = {
-		{ "Pokusaev Vyacheslav Oleksiyovich", "c. Dnipro, d. Topol - 1", 6, 44, 30000 },
-		{ "Kostychdenko Mark Oleg", "c. Dnipro, d. Petrovskiy", 56, 1, 10000},
-		{ "Guzenko Artem Artemovich", "c. Dnipro, d. Leftbeach - 3", 77, 777, 12500 }
-	};
-	
 	ofstream out;
-	out.open("test.dat", ios::binary | ios::out | ios::trunc);
-	out.write(static_cast <char*>(static_cast <void*> (floats)), sizeof floats);
-	out.close();
-
 	ifstream in;
-	Real_estate_float _real_estate_float;
-	int sizeOfRecord = sizeof _real_estate_float;
-	in.open("test.dat", ios::binary | ios::in);
-	while (in.eof() != true)
+	int CountRecordsInFile = 3;
+	Real_estate_float _float; // For record in file
+	char* NameFile = new char[200];
+	int choiseUser; // Menu
+	bool check = false;
+
+	/*out.open("test.dat", ios::binary | ios::app | ios::trunc);
+	Real_estate_float floats[3] = {
+		{ "pokusaev vyacheslav oleksiyovich", "c. dnipro, d. topol - 1", 6, 44, 30000 },
+		{ "kostychdenko mark oleg", "c. dnipro, d. petrovskiy", 56, 1, 30000},
+		{ "guzenko artem artemovich", "c. dnipro, d. leftbeach - 3", 77, 777, 12500 }
+	};
+	out.write(static_cast <char*>(static_cast <void*> (floats)), sizeof floats);
+	out.close();*/
+
+	while (true)
 	{
-		in.read(static_cast <char*>(static_cast <void*> (&_real_estate_float)), sizeOfRecord);	//read first record, set to second record
-		cout << '(' << _real_estate_float.FIO << ", Price " << _real_estate_float.Price << 
-			", Address:\nAddress(number float) " << _real_estate_float.Address.Number_float <<
-			",\nAddress(number house) " << _real_estate_float.Address.Number_house <<
-			",\nAddress(number street) " << _real_estate_float.Address.Street <<
-			")\n";
+		system("cls");
+		cout << "\tMenu\n\n";
+		cout << "1. Open file\n"
+			<< "2. Add float\n"
+			<< "3. Show all floats\n"
+			<< "4. Search floats by price\n"
+			<< "5. Search the lowest floats\n"
+			<< "6. Exit\n\n";
+
+		cout << "Your choise: "; cin >> choiseUser;
+
+		switch (choiseUser)
+		{
+		case 1:
+		{
+			cout << "Enter name file: "; cin >> NameFile;
+			CheckFile(out, NameFile);
+			in.open(NameFile, ios::binary | ios::in);
+			check = true;
+			system("pause");
+			break;
+		}
+		case 2:
+		{
+			if (check)
+			{
+				cout << "Add data to float:\n";
+				cout << "FIO: "; cin >> _float.FIO;
+				cout << "Number_float: "; cin >> _float.Address.Number_float;
+				cout << "Number_house: "; cin >> _float.Address.Number_house;
+				cout << "Street: "; cin >> _float.Address.Street;
+				AddToFile(out, _float, CountRecordsInFile);
+			}
+			else
+				cout << "You shoud open file! Please choise 1 opinion\n";
+			system("pause");
+			break;
+		}
+		case 3:
+		{
+			if (check)
+				ReadAllFromFile(in, CountRecordsInFile);
+			else
+				cout << "You shoud open file! Please choise 1 opinion\n";
+			system("pause");
+			break;
+		}
+		case 4:
+		{
+			if (check)
+				ShowFloatWithDefinitelyPrice(in, CountRecordsInFile);
+			else
+				cout << "You shoud open file! Please choise 1 opinion\n";
+			system("pause");
+			break;
+		}
+		case 5:
+		{
+			if (check)
+				ShowLowFloats(in, CountRecordsInFile);
+			else
+				cout << "You shoud open file! Please choise 1 opinion\n";
+			system("pause");
+			break;
+		}
+		case 6:
+			exit(EXIT_SUCCESS);
+			break;
+		default:
+			break;
+		}
 	}
+
+	out.close();
 	in.close();
 
 	system("pause");
