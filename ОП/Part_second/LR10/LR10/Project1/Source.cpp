@@ -1,13 +1,12 @@
 #include<iostream>
 #include<math.h>
-#define N 7
+#define N 10
 using namespace std;
 
 // usual recurtion
 double RecursArth(double x, int Count)
 {
 	if (Count == 1) return x; // exit from recurtion
-
 	return (pow(x, Count) / Count) + RecursArth(x, Count - 2); // count sum and work with steck
 }
 // tail recurtion
@@ -17,7 +16,7 @@ double TailRecursArth(double x, int Count, double prev)
 
 	return TailRecursArth(x, Count - 2, prev + (pow(x, Count) / Count)); // count sum and work with steck
 }
-// iteration recurtion
+// iteration
 double Arth(double x)
 {
 	double arth = x, a = x; // save begining data
@@ -28,7 +27,7 @@ double Arth(double x)
 	}
 	return arth;
 }
-// recurtion with accuracy
+// Arth with accuracy
 double FuncArth(double x, double accuracy)
 {
 	// aN - cout numbers
@@ -37,6 +36,7 @@ double FuncArth(double x, double accuracy)
 	double term = x;
 	double sum = term;
 	int	aN = 1;
+
 	while (fabs(term) > accuracy)
 	{
 		term = 1;
@@ -53,24 +53,12 @@ double FuncArth(double x, double accuracy)
 int main()
 {
 	double x, accuracy;
-	int count_iteration;
 
 	while (true)
 	{
 		cout << "Enter x: "; cin >> x;
 
-		while (x < -1 && x > 1)
-		{
-			x /= 10;
-		}
-
-		cout << "Enter count iteration (>0): "; cin >> count_iteration;
-
-		while (count_iteration < 0)
-		{
-			cout << "Count iteration have to be > 0!\n";
-			cout << "Enter count iteration (>0): "; cin >> count_iteration;
-		}
+		while (x < -1 && x > 1) x /= 10; // check diapozon
 
 		cout << "Enter accuracy (>0): "; cin >> accuracy;
 
@@ -84,9 +72,8 @@ int main()
 		cout << "Arth(" << x << ") = " << FuncArth(x, accuracy) << endl;
 		cout << "Arth(" << x << ") = " << Arth(x) << endl;
 
-		if (count_iteration % 2 == 0) count_iteration++;
-		cout << "Arth(" << x << ") = " << RecursArth(x, count_iteration) << endl;
-		cout << "Arth(" << x << ") = " << TailRecursArth(x, count_iteration, x) << endl;
+		cout << "Arth(" << x << ") = " << RecursArth(x, N) << endl;
+		cout << "Arth(" << x << ") = " << TailRecursArth(x, N, x) << endl;
 
 		cout << "\n\n";
 		system("pause");
