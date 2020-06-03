@@ -1,0 +1,2 @@
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\Debug\LR6.MyForm.resources
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\Debug\LR6.vcxproj.GenerateResource.cache

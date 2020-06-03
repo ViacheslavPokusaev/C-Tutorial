@@ -1,0 +1,12 @@
+﻿  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  MyForm.cpp
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(170,50): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(171,47): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(198,14): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(200,27): warning C4101: 'ex': unreferenced local variable
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(230,1): warning C4965: implicit box of integer 0; use nullptr or explicit cast
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(232,1): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\LR6\MyForm.h(247,32): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  MyForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  LR6.vcxproj -> C:\Users\User\Documents\C++Tutorial\ОПИ\LR6\Debug\LR6.exe
