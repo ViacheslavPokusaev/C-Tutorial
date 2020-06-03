@@ -1,0 +1,8 @@
+﻿  InputOutput.cpp
+  WorkWithMatrix.cpp
+C:\Users\User\Documents\C++Tutorial\ОПИ\ЛР5\ЛР5\WorkWithMatrix.cpp(61,38): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+C:\Users\User\Documents\C++Tutorial\ОПИ\ЛР5\ЛР5\main.cpp(14,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+C:\Users\User\Documents\C++Tutorial\ОПИ\ЛР5\ЛР5\main.cpp(17,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  ЛР5.vcxproj -> C:\Users\User\Documents\C++Tutorial\ОПИ\ЛР5\Debug\ЛР5.exe
